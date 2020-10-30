@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="regi.css" rel="stylesheet" type="text/css" media="all" />
+<link href="assets/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+
+
+
+    </h:head>
+    <h:body>
+        <div class="main-w3layouts wrapper">
+		<h1>Register a User</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+	
+        <h:form class="form-horizontal" id="popup-validation">
+                 
+
+            <h:outputText value="First Name"/>
+            <h:inputText class="validate[required] form-control"  id="fname" value="#{userManagedBean.fname}" /> <br></br>
+            
+            <h:outputText value="Middle Name"/>
+            <h:inputText class="validate[required] form-control"  id="mname" value="#{userManagedBean.mname}"/> <br></br>
+            
+            <h:outputText value="Last Name"/>
+            <h:inputText class="validate[required] form-control" id="lname" value="#{userManagedBean.lname}"/> <br></br>
+            
+             <h:outputText value="Password"/>
+             <h:inputSecret class="validate[required,minSize[8]] form-control"  id="password" value="#{userManagedBean.password}"/> <br></br>
+            
+              <h:outputText class="text" value="Select City"/>
+             <h:selectOneMenu id="city" value="#{userManagedBean.usercityid}" class="validate[required] form-control">
+                 <f:selectItems value="#{cityManagedBean.allCities}" var="city" itemValue="#{city.cityId}" itemLabel="#{city.cityName}"/>
+               
+                </h:selectOneMenu>    
+              <br></br>
+             
+            <h:outputText value="Date Of Birth"/>
+            <h:inputText class="validate[required,custom[date],past[2002/10/1]] form-control" id="dob" value="#{userManagedBean.dob }">
+            <f:convertDateTime pattern="yyyy-MM-dd"/>
+            </h:inputText> <br></br>
+            
+            <h:outputText value="Email"/>
+            <h:inputText class="validate[required,custom[email]] form-control" id="email"  value="#{userManagedBean.email }"/> <br></br>
+            
+            <h:outputText value="Mobile Number"/>
+            <h:inputText class="validate[required,minSize[10],maxSize[10]] form-control"  id="mnumber" value="#{userManagedBean.phoneno }"/> <br></br>
+                  
+            <h:outputText  value="Gender"/>
+            <h:selectOneRadio   required="true" requiredMessage="Select Gender" value = "#{userManagedBean.gender}"> 
+               <f:selectItem  itemValue = "M" itemLabel = "Male" /> 
+               <f:selectItem  itemValue = "F" itemLabel = "Female" />
+            </h:selectOneRadio> 
+            <div class="wthree-text">
+		<label class="anim">
+                    <input type="checkbox" class="checkbox" required=""/>
+                        <span>I Agree To The Terms  Conditions</span>
+		</label>
+		<div class="clear"> </div>
+            </div>
+	
+            <h:commandButton id="submit" value="Register" action="#{userManagedBean.addData()}"></h:commandButton><br></br>
+       
+              <h:link value = "Login" outcome = "login.xhtml" />
+      
+        </h:form>
+ 
+                        </div>
+                </div>
+        <ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+    </h:body>
+    <script src="assets/assets/plugins/jquery-2.0.3.min.js"></script>
+    <script src="assets/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <!-- END GLOBAL SCRIPTS -->
+
+    <!-- PAGE LEVEL SCRIPTS -->
+
+    <script src="assets/assets/plugins/validationengine/js/jquery.validationEngine.js"></script>
+    <script src="assets/assets/plugins/validationengine/js/languages/jquery.validationEngine-en.js"></script>
+    <script src="assets/assets/plugins/jquery-validation-1.11.1/dist/jquery.validate.min.js"></script>
+    <script src="assets/assets/js/validationInit.js"></script>
+    <script>
+        $(function () { formValidation(); });
+        </script>
+</html>
+

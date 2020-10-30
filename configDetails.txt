@@ -1,0 +1,4 @@
+Netbeans 8.2
+XAMMP Server for MySql Database
+Payara server 5.183
+
